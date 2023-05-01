@@ -58,10 +58,13 @@ export default class OneWayAsyncPage extends ContentPage {
             <div>Loading....</div>
         </div>;
 
+        // it is important to set start to zero when search changes
         this.headerRenderer = () => <div data-layout="row">
             <input
+                type="search"
                 event-input={() => this.start = 0}
-                value={Bind.twoWaysImmediate(() => this.search)}/>
+                value={Bind.twoWaysImmediate(() => this.search)}
+                placeholder="Search in post title..."/>
         </div>;
 
         this.renderer = <div>
