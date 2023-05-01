@@ -16,7 +16,7 @@
     <script src="/.vscode/.waSetup.js"></script>
     <script>
 
-        if (/^webatomsbindingdemo\-/i.test(location.href)) {
+        if (window.VisualViewport.width < 900 || (window.visualViewport.height > window.visualViewport.width)) {
             window.forceMobileLayout = true;
         }
 
