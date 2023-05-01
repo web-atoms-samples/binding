@@ -16,17 +16,27 @@
     <script src="/.vscode/.waSetup.js"></script>
     <script>
 
-        if (window.VisualViewport.width < 900 || (window.visualViewport.height > window.visualViewport.width)) {
-            window.forceMobileLayout = true;
-        }
+        (function() {
+            if (window.VisualViewport.width < 900 || (window.visualViewport.height > window.visualViewport.width)) {
+                window.forceMobileLayout = true;
+            }
+            
+            const url = new URL(location.href);
+            if(url.searchParams.get("mode") === "mobile") {
+                window.forceMobileLayout = true;
+            }
+        })();
 
-        UMD.setupRoot("@web-atoms-samples/binding","");
-        UMD.map("@web-atoms-samples/binding", "");
-        UMD.lang = "en-US";
-        
-        UMD.loadView("@web-atoms-samples/binding/dist/AppIndex", false).catch((error) => {
-            console.error(error);
-            setTimeout(() => location.reload(), 500);
+        (function () {
+            UMD.setupRoot("@web-atoms-samples/binding","");
+            UMD.map("@web-atoms-samples/binding", "");
+            UMD.lang = "en-US";
+            
+            UMD.loadView("@web-atoms-samples/binding/dist/AppIndex", false)
+                .catch((error) => {
+                    console.error(error);
+                    setTimeout(() => location.reload(), 1000);
+                });
         });
     </script>
 </body>
