@@ -17,7 +17,11 @@ export default class AppIndex extends MobileDesktopApp {
 
         PopupService.lastTarget =  this.element;
 
-        (this.app as WebApp).installStyleSheet("/node_modules/@fortawesome/fontawesome-free/css/all.min.css");
+        (this.app as WebApp).installStyleSheet({
+            href: "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css",
+            integrity: "sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=",
+            crossOrigin: "anonymous"
+        });
 
         this.drawerMenu = AppMenu;
 
