@@ -26,7 +26,7 @@
         
         UMD.loadView("@web-atoms-samples/binding/dist/AppIndex", false).catch((error) => {
             console.error(error);
-            setTimeout(location.reload, 500, location);
+            setTimeout(() => location.reload(), 500);
         });
     </script>
 </body>
