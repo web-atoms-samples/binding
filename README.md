@@ -7,7 +7,7 @@ Desktop and Mobile App Sample
 
 # Open sample in stackblitz.com
 
-https://stackblitz.com/~/github.com/web-atoms-samples/desktop-mobile-app
+https://stackblitz.com/~/github.com/web-atoms-samples/binding
 
 The project should automatically install, compile and load a simple http-server to serve the html/css/javascript files from the project.
 
