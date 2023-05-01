@@ -15,12 +15,19 @@
 <body>
     <script src="/.vscode/.waSetup.js"></script>
     <script>
-        UMD.setupRoot("@web-atoms/intro","");
-        UMD.map("@web-atoms/intro", "");
-        UMD.map("@web-atoms/dev-server", "/_dev");
-        UMD.map("qrcode", "/_dev/node_modules/qrcode");
+
+        if (/^webatomsbindingdemo\-/i.test(location.href)) {
+            window.forceMobileLayout = true;
+        }
+
+        UMD.setupRoot("@web-atoms-samples/binding","");
+        UMD.map("@web-atoms-samples/binding", "");
         UMD.lang = "en-US";
-        UMD.loadView("@web-atoms/intro/dist/AppIndex", false);
+        
+        UMD.loadView("@web-atoms-samples/binding/dist/AppIndex", false).catch((error) => {
+            console.error(error);
+            setTimeout(location.reload, 500, location);
+        });
     </script>
 </body>
 </html>
