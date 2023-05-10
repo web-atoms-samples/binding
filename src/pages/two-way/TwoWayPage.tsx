@@ -18,7 +18,7 @@ export default class TwoWayPage extends ContentPage {
     public async init() {
 
         this.render(<div>
-            <Form data-data-submit-event="login">
+            <Form data-submit-event="login">
                 <FormField
                     label="Username"
                     required={true}
