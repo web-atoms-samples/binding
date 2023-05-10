@@ -1,10 +1,11 @@
 import XNode from "@web-atoms/core/dist/core/XNode";
 import ComboBox from "@web-atoms/web-controls/dist/basic/ComboBox";
 import { ContentPage } from "@web-atoms/web-controls/dist/mobile-app/MobileApp";
-import Form2, { BindError } from "@web-atoms/web-controls/dist/basic/Form2";
+import Form, { BindError } from "@web-atoms/web-controls/dist/basic/Form";
 import FormField from "@web-atoms/web-controls/dist/basic/FormField";
 import Bind from "@web-atoms/core/dist/core/Bind";
 import PasswordBox from "@web-atoms/web-controls/dist/basic/PasswordBox";
+import Action from "@web-atoms/core/dist/view-model/Action";
 
 export default class TwoWayPage extends ContentPage {
 
@@ -17,7 +18,7 @@ export default class TwoWayPage extends ContentPage {
     public async init() {
 
         this.render(<div>
-            <Form2>
+            <Form data-data-submit-event="login">
                 <FormField
                     label="Username"
                     required={true}
@@ -44,7 +45,12 @@ export default class TwoWayPage extends ContentPage {
                         type="submit" 
                         text="Signup"/>
                 </FormField>
-            </Form2>
+            </Form>
         </div>);
+    }
+
+    @Action({ onEvent: "login", success: "Login successful."})
+    async login() {
+        // do something. here...
     }
 }
