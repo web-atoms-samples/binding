@@ -30,13 +30,14 @@ export default class TwoWayPage extends ContentPage {
                     label="Password"
                     required={true}
                     error={BindError({ value: () => this.model.password})}>
-                    <input
+                    <PasswordBox
                         type="password"
                         value={Bind.twoWaysImmediate(() => this.model.password)}/>
                 </FormField>
                 <FormField
                     label="Password Again"
-                    error={BindError({ value: () => this.model.password === this.model.passwordAgain, isValid: (v) => !v || v === "true"})}>
+                    error={BindError({
+                        value: () => this.model.password === this.model.passwordAgain})}>
                     <PasswordBox
                         value={Bind.twoWaysImmediate(() => this.model.passwordAgain)}/>
                 </FormField>
