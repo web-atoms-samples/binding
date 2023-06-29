@@ -9,6 +9,7 @@ import OneWayAsyncPage from "../pages/one-way-async/OneWayAsyncPage";
 import TwoWayPage from "../pages/two-way/TwoWayPage";
 import StylePage from "../pages/style/StylePage";
 import EventPage from "../pages/event/EventPage";
+import AppCommands from "../commands/AppCommands";
 
 const css = styled.css `
     cursor: pointer;
@@ -31,20 +32,16 @@ const MenuItem = ({
     label,
     icon = "",
     command,
-    openPage,
-    pushPage
 }: IMenuItem) => {
-    return <div
+    return <a
         class={css}
         data-layout="row"
-        event-click={() => command
-            ? command.dispatch()
-            : (openPage
-                    ? PageNavigator.openPage(openPage)
-                    : PageNavigator.pushPage(pushPage))}>
+        data-click-event="route"
+        href={command.displayRoute({})}
+        >
         { icon && <i class={icon}/>}
         <span text={label}/>
-    </div>;
+    </a>;
 };
 
 export default class AppMenu extends Drawer {
@@ -56,32 +53,32 @@ export default class AppMenu extends Drawer {
 
             <MenuItem
                 label="Home"
-                openPage={HomePage}
+                command={AppCommands.home}
                 />
 
             <MenuItem
                 label="One Way"
-                openPage={OneWayPage}
+                command={AppCommands.oneWay}
                 />
 
             <MenuItem
                 label="Two Way"
-                openPage={TwoWayPage}
+                command={AppCommands.twoWay}
                 />
 
             <MenuItem
                 label="One Way Async"
-                openPage={OneWayAsyncPage}
+                command={AppCommands.oneWayAsync}
                 />
 
             <MenuItem
                 label="Event"
-                openPage={EventPage}
+                command={AppCommands.event}
                 />
 
             <MenuItem
                 label="Style"
-                openPage={StylePage}
+                command={AppCommands.style}
                 />
         </div>;
     }

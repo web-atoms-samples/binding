@@ -10,6 +10,8 @@ import "./styles/GlobalStyle";
 import { AtomControl } from "@web-atoms/core/dist/web/controls/AtomControl";
 import ThisApp from "./common/ThisApp";
 import XNode from "@web-atoms/core/dist/core/XNode";
+import Command from "@web-atoms/core/dist/core/Command";
+import AppCommands from "./commands/AppCommands";
 
 export default class AppIndex extends MobileDesktopApp {
 
@@ -23,18 +25,18 @@ export default class AppIndex extends MobileDesktopApp {
             crossOrigin: "anonymous"
         });
 
+        AppCommands.install(this);
+
         this.drawerMenu = AppMenu;
 
         if(this.desktopApp) {
             await this.desktopInit();
         }
 
-        this.openDefault();
+        if(!Command.invokeRoute()) {
+            AppCommands.home.dispatch();
+        }
 
-    }
-
-    openDefault() {
-        PageNavigator.openPage(HomePage);
     }
 
     async desktopInit() {
