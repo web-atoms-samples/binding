@@ -9,11 +9,9 @@ import PageNavigator from "@web-atoms/web-controls/dist/PageNavigator";
 import StylePage from "../style/StylePage";
 import EventPage from "../event/EventPage";
 
-const homeCSS = styled.css `
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-`.installLocal();
+import "./Home.local.less";
+
+const homeCSS = "pages-home";
 
 export default class HomePage extends ContentPage {
 

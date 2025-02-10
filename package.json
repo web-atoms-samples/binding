@@ -20,18 +20,20 @@
   "homepage": "https://github.com/web-atoms-samples/binding#readme",
   "bundleDependencies": true,
   "dependencies": {
-    "@web-atoms/core": "^2.2.175",
-    "@web-atoms/date-time": "^1.1.0",
-    "@web-atoms/entity": "^2.4.15",
-    "@web-atoms/font-awesome": "^1.0.37",
-    "@web-atoms/hybrid-clr": "^1.0.21",
-    "@web-atoms/module-loader": "^2.1.32",
-    "@web-atoms/web-controls": "^2.3.241",
-    "@web-atoms/data-styles": "^1.0.98",
+    "@web-atoms/core": "^2.4.45",
+    "@web-atoms/data-styles": "^1.0.124",
+    "@web-atoms/date-time": "^1.1.3",
+    "@web-atoms/email-dom": "^1.0.33",
+    "@web-atoms/entity": "^2.4.76",
+    "@web-atoms/module-loader": "^2.1.87",
+    "@web-atoms/web-controls": "^2.4.71",
     "reflect-metadata": "^0.1.13",
     "tslib": "^2.5.0"
   },
   "devDependencies": {
-    "@web-atoms/typescript-and-http-server": "^1.0.9"
+    "@web-atoms/typescript-and-http-server": "^1.0.9",
+    "@neurospeech/jex": "^1.0.112",
+    "less": "^4.2.1",
+    "tslib": "^2.4.1"
   }
 }

@@ -4,40 +4,10 @@ import PostService, { IPost } from "./service/PostService";
 import XNode from "@web-atoms/core/dist/core/XNode";
 import AtomRepeater from "@web-atoms/web-controls/dist/basic/AtomRepeater";
 import Bind from "@web-atoms/core/dist/core/Bind";
-import styled from "@web-atoms/core/dist/style/styled";
 
-const postCss = styled.css `
-    display: grid;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    padding: 10px;
-    border: solid 1px lightcyan;
-    grid-template-columns: auto 1fr;
-    grid-template-rows: auto auto;
-    gap: 5px;
+import "./OneWayAsyncPage.local.less";
 
-    & > .title {
-        grid-row: 1;
-        grid-column: 1 / span 2;
-    }
-
-    & > .reaction {
-        grid-row: 2;
-        grid-column: 1;
-        & > i {
-            color: red;
-        }
-    }
-
-    & > .tags {
-        grid-row: 2;
-        grid-column: 2;
-        & > * {
-            margin-left: 5px;
-            color: blueviolet;
-        }
-    }
-`.installLocal();
+const postCss = "one-way-async-post";
 
 export default class OneWayAsyncPage extends ContentPage {
 

@@ -5,13 +5,14 @@ import PopupService from "@web-atoms/core/dist/web/services/PopupService";
 import AppMenu from "./menu/AppMenu";
 import HomePage from "./pages/home/Home";
 import WebApp from "@web-atoms/core/dist/web/WebApp";
-
-import "./styles/GlobalStyle";
+import "@web-atoms/data-styles/data-styles";
 import { AtomControl } from "@web-atoms/core/dist/web/controls/AtomControl";
 import ThisApp from "./common/ThisApp";
 import XNode from "@web-atoms/core/dist/core/XNode";
 import Command from "@web-atoms/core/dist/core/Command";
 import AppCommands from "./commands/AppCommands";
+
+import "./AppIndex.global.less";
 
 export default class AppIndex extends MobileDesktopApp {
 
