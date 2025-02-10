@@ -31,7 +31,7 @@
     "tslib": "^2.5.0"
   },
   "devDependencies": {
-    "@web-atoms/typescript-and-http-server": "^1.0.10",
+    "@web-atoms/typescript-and-http-server": "^1.0.11",
     "@neurospeech/jex": "^1.0.112",
     "less": "^4.2.1",
     "tslib": "^2.4.1"
